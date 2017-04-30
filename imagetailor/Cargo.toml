@@ -1,0 +1,7 @@
+[package]
+name = "imagetailor"
+version = "0.1.0"
+authors = [" ctliu3<lcndn3@gmail.com>"]
+
+[dependencies]
+image = "*"
