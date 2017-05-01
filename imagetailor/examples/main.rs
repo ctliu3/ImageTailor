@@ -12,6 +12,5 @@ fn main() {
     let dest = "examples/images/blur_output.jpg";
     let ref mut fout = File::create(&Path::new(dest)).unwrap();
     let _ = image.save(fout, image::PNG);
-    println!("done..\n");
 }
 
