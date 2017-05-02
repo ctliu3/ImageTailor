@@ -1,4 +1,3 @@
-
 use image::{GenericImage, DynamicImage};
 
 pub fn gaussian_blur(image: &mut DynamicImage, ksize: usize, sigma: f32) {
