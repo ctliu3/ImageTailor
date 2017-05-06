@@ -20,3 +20,19 @@ fn dilate_test() {
     assert!(Path::new(dst).exists());
     assert!(true);
 }
+
+#[test]
+fn erode_test() {
+    let src = "images/morph.png";
+    let dst = "images/erode.jpg";
+
+    let mut image: DynamicImage = image::open(&Path::new(src)).unwrap();
+    let ksize = 3;
+    let kernel = vec![vec![1u8; ksize]; ksize];
+    imagetailor::process::morphology::erode(&mut image, kernel, 1);
+
+    let ref mut fout = File::create(&Path::new(dst)).unwrap();
+    let _ = image.save(fout, image::PNG);
+    assert!(Path::new(dst).exists());
+    assert!(true);
+}
